@@ -1,0 +1,73 @@
+.CoveoSearchboxDropdownItem {
+   display: none;
+}
+.coveo-custom-searchbox-dropdown {
+  position: relative;
+  display: inline-block;
+  float: left;
+  z-index: 12;
+  padding: 12px 10px;
+  font-size: 16px;
+  line-height: 24px;
+  border: thin solid #7e8c9a;
+  border-top-left-radius: 2px;
+  cursor: pointer;
+  &.active,
+  &:hover {
+    background-color: #D6D4D4;
+  }
+  &.active {
+    .coveo-custom-searchbox-dropdown-content {
+    display: block;
+    }
+  }
+}
+.coveo-custom-searchbox-dropdown-selected .fa {
+  font-size: 10px;
+  padding-left: 5px;
+  position: relative;
+  top: -2px;
+}
+ul.coveo-custom-searchbox-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  z-index: 12;
+  margin: 0;
+  list-style-type: none;
+  box-shadow: 0 0px 6px rgba(0, 0, 0, .175);
+  background-color: #e7e7e7;
+  border: 3px solid #fff;
+  border-radius: 0px;
+  font-family: arial;
+  min-width: 250px;
+  left: 0px;
+  top: 55px;
+  li {
+    &.indent a {
+      padding-left: 25px;
+      font-style: italic;
+    }
+    &.hidden {
+      display: none;
+    }
+    a {
+      padding: 3px 10px;
+      border-left: 5px solid transparent;
+      display: block;
+      color: #000;
+      text-decoration: none;
+      &:hover {
+        background-color: #F5F5F5;
+      }
+    }
+    &:hover::before {
+      content: '';
+      position: absolute;
+      height: 30px;
+    }
+  }
+}
