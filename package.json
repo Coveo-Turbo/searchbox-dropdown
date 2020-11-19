@@ -15,7 +15,7 @@
         "url": "git+https://github.com/Coveo-Turbo/searchbox-dropdown.git"
     },
     "keywords": [],
-    "author": "",
+    "author": "jfallaire",
     "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/Coveo-Turbo/searchbox-dropdown/issues"
