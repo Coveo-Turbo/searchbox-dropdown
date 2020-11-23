@@ -7,6 +7,7 @@ export interface ISearchboxDropdownOptions {}
 @lazyComponent
 export class SearchboxDropdown extends Component {
     static ID = 'SearchboxDropdown';
+    static arrowDownIcon = `<svg alt=\"Arrow Down\" focusable=\"false\" enable-background=\"new 0 0 10 6\" viewBox=\"0 0 10 6\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m5 5.932c-.222 0-.443-.084-.612-.253l-4.134-4.134c-.338-.338-.338-.886 0-1.224s.886-.338 1.224 0l3.522 3.521 3.523-3.521c.336-.338.886-.338 1.224 0s .337.886-.001 1.224l-4.135 4.134c-.168.169-.39.253-.611.253z\"></path></g></svg>`;
     static options: ISearchboxDropdownOptions = {};
     private selectedItem: SearchboxDropdownItem = null;
     public itemList: HTMLElement = null;
@@ -34,14 +35,14 @@ export class SearchboxDropdown extends Component {
       if (!Utils.isNullOrUndefined(renderedSelectedItem)) {
         renderedSelectedItem.remove();
       }
+      
       let selectedItem = $$('span', {class: 'coveo-custom-searchbox-dropdown-selected'},
                              this.selectedItem.options.caption +
-                             '<i class="fa fa-chevron-down"></i>').el;
-      /**
-       * If you want the chevron to appear, you need to include Font Awesome
-       * (see https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css).
-       * Alternatively, you could also include your own image.
-       */
+                             SearchboxDropdown.arrowDownIcon).el;
+      let arrowDownSvg = $$(selectedItem).find('svg');
+      if (arrowDownSvg) {
+          arrowDownSvg.classList.add('coveo-custom-searchbox-dropdown-down-icon-svg');
+      }
       this.element.appendChild(selectedItem);
     }
     /**
