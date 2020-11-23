@@ -43,11 +43,6 @@ export class SearchboxDropdown extends Component {
       if (arrowDownSvg) {
           arrowDownSvg.classList.add('coveo-custom-searchbox-dropdown-down-icon-svg');
       }
-      /**
-       * If you want the chevron to appear, you need to include Font Awesome
-       * (see https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css).
-       * Alternatively, you could also include your own image.
-       */
       this.element.appendChild(selectedItem);
     }
     /**
