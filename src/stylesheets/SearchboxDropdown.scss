@@ -22,12 +22,7 @@
     }
   }
 }
-.coveo-custom-searchbox-dropdown-selected .fa {
-  font-size: 10px;
-  padding-left: 5px;
-  position: relative;
-  top: -2px;
-}
+
 ul.coveo-custom-searchbox-dropdown-content {
   display: none;
   position: absolute;
@@ -72,6 +67,13 @@ ul.coveo-custom-searchbox-dropdown-content {
   }
 }
 
+
+.coveo-custom-searchbox-dropdown-selected-caption {
+    flex-grow: 1;
+}
+.coveo-custom-searchbox-dropdown-selected {
+    display: flex;
+}
 .coveo-custom-searchbox-dropdown-down-icon-svg {
     width: 15px;
     height: 15px;

@@ -36,9 +36,12 @@ export class SearchboxDropdown extends Component {
         renderedSelectedItem.remove();
       }
       
-      let selectedItem = $$('span', {class: 'coveo-custom-searchbox-dropdown-selected'},
-                             this.selectedItem.options.caption +
-                             SearchboxDropdown.arrowDownIcon).el;
+      let selectedItem = $$('div', {class: 'coveo-custom-searchbox-dropdown-selected'}).el;
+      let selectedItemCation = $$('div', {class: 'coveo-custom-searchbox-dropdown-selected-caption'}, this.selectedItem.options.caption).el;
+      let selectedItemButton = $$('div', {}, SearchboxDropdown.arrowDownIcon).el;
+      selectedItem.append(selectedItemCation);
+      selectedItem.append(selectedItemButton);
+
       let arrowDownSvg = $$(selectedItem).find('svg');
       if (arrowDownSvg) {
           arrowDownSvg.classList.add('coveo-custom-searchbox-dropdown-down-icon-svg');
